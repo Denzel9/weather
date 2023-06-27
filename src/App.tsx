@@ -3,7 +3,7 @@ import './App.scss'
 import Layout from './components/layout/Layout'
 import Weather from './pages/weather'
 import Search from './pages/search'
-import Auth from './pages/auth'
+import Cities from './pages/cities'
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route index element={<Weather />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/auth" element={<Auth />} />
+        <Route path="/cities" element={<Cities />} />
       </Routes>
     </Layout>
   )

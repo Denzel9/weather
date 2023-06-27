@@ -4,7 +4,7 @@ import { SearchContext } from '../../../layout/Layout'
 
 const SearchItem: FunctionComponent<{ data: { [key: string]: string } }> = ({ data }) => {
   const search = useContext(SearchContext)
-  return (
+  return data.image ? (
     <div className=" w-[260px]">
       <h2 className=" text-3xl my-5">{data.title}</h2>
       <img className=" rounded-md" src={data.image} alt="" />
@@ -19,7 +19,7 @@ const SearchItem: FunctionComponent<{ data: { [key: string]: string } }> = ({ da
         <MdOutlineFavoriteBorder />В избранное
       </button>
     </div>
-  )
+  ) : null
 }
 
 export default SearchItem
