@@ -1,0 +1,26 @@
+.input {
+  &::-webkit-search-cancel-button {
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  &::-webkit-input-placeholder {
+    color: white;
+    opacity: 0.5;
+  }
+  &:-moz-placeholder {
+    color: white;
+    opacity: 0.5;
+  }
+  &::-moz-placeholder {
+    color: white;
+    opacity: 0.5;
+  }
+  &:-ms-input-placeholder {
+    color: white;
+    opacity: 0.5;
+  }
+  &::-ms-input-placeholder {
+    color: white;
+    opacity: 0.5;
+  }
+}
