@@ -1,5 +1,5 @@
 import { FunctionComponent, useContext } from 'react'
-import { MdLocationCity, MdOutlineFavorite, MdOutlineFavoriteBorder } from 'react-icons/md'
+import { MdLocationCity, MdOutlineFavoriteBorder } from 'react-icons/md'
 import { SearchContext } from '../../../layout/Layout'
 
 const SearchItem: FunctionComponent<{ data: { [key: string]: string } }> = ({ data }) => {
