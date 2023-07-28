@@ -21,7 +21,7 @@ const Forecast3Day: FunctionComponent = () => {
   }, [data])
 
   return (
-    <div className="  ml-3 w-[324px] h-[450px] bg-gray-500 bg-opacity-40 rounded-[40px] p-[20px] text-white  ">
+    <div className="  w-full h-[450px] bg-gray-500 bg-opacity-40 rounded-[40px] p-[20px] text-white">
       <div className=" flex items-center justify-between">
         {data?.forecast?.forecastday?.map((item: any) => {
           return (
@@ -44,21 +44,21 @@ const Forecast3Day: FunctionComponent = () => {
         })}
       </div>
       <p className=" text-center mt-2">{currentTime + getApPm(currentTime)}</p>
-      <p className=" text-3xl mt-4">Сейчас:</p>
-      {currentDayHour()?.map((item: any) => {
+      <p className=" text-2xl mt-4">Сейчас:</p>
+      {currentDayHour()?.map((item) => {
         return (
-          <div className=" flex flex-col gap-6 mt-8" key={item.feelslike_c}>
-            <p className=" flex gap-1  items-center text-xl">
+          <div className=" flex flex-col gap-8 mt-8" key={item.feelslike_c}>
+            <p className=" flex gap-1 items-center text-lg">
               <MdDeviceThermostat /> Ощушается как {item.feelslike_c}°C
             </p>
-            <p className=" flex gap-1  items-center text-xl">
+            <p className=" flex gap-1  items-center text-lg">
               <MdOutlineWindPower />
-              Скорость ветра {item.wind_kph} km/h
+              Ветер {item.wind_kph} км/ч
             </p>
-            <p className=" flex gap-1  items-center text-xl">
-              <MdWaterDrop /> Вероятность дождя {item.chance_of_rain}%
+            <p className=" flex gap-1  items-center text-lg">
+              <MdWaterDrop /> Дождь {item.chance_of_rain}%
             </p>
-            <p className=" flex gap-1 items-center text-xl">
+            <p className=" flex gap-1 items-center text-lg">
               <MdWbSunny /> UV излучение {item.uv}
             </p>
           </div>

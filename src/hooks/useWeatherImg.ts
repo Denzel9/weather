@@ -11,7 +11,8 @@ export const useWeatherImg = (data: string) => {
       data === 'Дождь' ||
       data === 'Местами дождь' ||
       data === 'Пасмурно' ||
-      data === 'В отдельных районах умеренный или сильный дождь с грозой'
+      data === 'В отдельных районах умеренный или сильный дождь с грозой' ||
+      data === 'В отдельных районах местами небольшой дождь с грозой'
     ) {
       return currentHour >= '22' || currentHour <= '07' ? setImg('bg-Night') : setImg('bg-Razor')
     }

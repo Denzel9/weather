@@ -1,6 +1,6 @@
 import axios from 'axios'
-import { useState, useEffect } from 'react'
 import { IData } from '../types/data.interface'
+import { useState, useEffect } from 'react'
 
 export const useWeatherData = () => {
   const [data, setData] = useState<IData>()

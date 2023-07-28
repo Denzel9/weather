@@ -15,6 +15,10 @@ export interface IForecastDay {
   hour: IHourItem[]
 }
 export interface IHourItem {
+  uv: number
+  chance_of_rain: number
+  wind_kph: number
+  feelslike_c: number
   temp_c: number
   time: string
 }

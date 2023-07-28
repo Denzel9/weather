@@ -27,7 +27,6 @@ export const useCityImage = (image: string) => {
           image: res.data.value[0].thumbnailUrl,
         })
       )
-    return () => {}
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [done])
   return { img, setDone }

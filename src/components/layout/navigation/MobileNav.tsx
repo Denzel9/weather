@@ -1,12 +1,10 @@
 import { FunctionComponent } from 'react'
-import NavigationItem from './nav-item/NavigationItem'
-import { FcLandscape } from 'react-icons/fc'
+import NavigationItem from './NavigationItem'
 
-const Navigation: FunctionComponent = () => {
+const MobileNav: FunctionComponent = () => {
   return (
-    <div className=" w-[100px] h-[450px] bg-gray-500 bg-opacity-40 rounded-full flex flex-col items-center py-[20px] text-white justify-between ">
-      <FcLandscape className=" mx-auto w-[50px] h-[50px]" />
-      <div className=" flex-col items-center flex gap-[30px]">
+    <div className=" fixed bottom-0 w-full left-0 right-0 bg-gray-500 bg-opacity-80 rounded-tl-3xl rounded-tr-3xl h-24 p-5">
+      <div className=" flex justify-between items-center ">
         <NavigationItem
           list={{
             link: '/',
@@ -36,4 +34,4 @@ const Navigation: FunctionComponent = () => {
   )
 }
 
-export default Navigation
+export default MobileNav
