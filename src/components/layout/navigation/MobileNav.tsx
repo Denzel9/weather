@@ -1,32 +1,37 @@
 import { FunctionComponent } from 'react'
 import NavigationItem from './NavigationItem'
 
+import { TiWeatherPartlySunny } from 'react-icons/ti'
+import { BiSearchAlt2 } from 'react-icons/bi'
+import { LiaCitySolid } from 'react-icons/lia'
+
 const MobileNav: FunctionComponent = () => {
   return (
-    <div className=" fixed bottom-0 w-full left-0 right-0 bg-gray-500 bg-opacity-80 rounded-tl-3xl rounded-tr-3xl h-24 p-5">
+    <div
+      className=" fixed bottom-0 w-full left-0 right-0 bg-gray-500
+    bg-opacity-80 z-10 rounded-tl-3xl rounded-tr-3xl h-24 pt-5 px-10
+    sm:hidden"
+    >
       <div className=" flex justify-between items-center ">
         <NavigationItem
           list={{
             link: '/',
             text: 'Погода',
-            img: './weather.png',
-            classNames: 'w-[40px] h-[40px]',
+            icon: <TiWeatherPartlySunny className="w-[40px] h-[40px]" />,
           }}
         />
         <NavigationItem
           list={{
             link: '/search',
             text: 'Поиск',
-            img: './explore.png',
-            classNames: 'w-[30px] h-[30px]',
+            icon: <BiSearchAlt2 className="w-[40px] h-[40px]" />,
           }}
         />
         <NavigationItem
           list={{
             link: '/cities',
             text: 'Города',
-            img: './city.png',
-            classNames: 'w-[25px] h-[35px]',
+            icon: <LiaCitySolid className="w-[40px] h-[40px]" />,
           }}
         />
       </div>

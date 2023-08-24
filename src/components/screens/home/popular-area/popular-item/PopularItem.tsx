@@ -1,20 +1,29 @@
 import { FunctionComponent, useContext } from 'react'
 import { IPopular } from '../../../../../types/popular.interface'
-import { SearchContext } from '../../../../layout/Layout'
+
+import SkeletonLoader from '../../../../ui/skeleton/Skeleton'
+import { DataContext } from '../../../../../context/DataContextProvider'
 
 const PopularItem: FunctionComponent<IPopular> = ({ title, img }) => {
-  const search = useContext(SearchContext)
+  const { setCity } = useContext(DataContext)
+
   return (
     <div
-      className=" mt-3 rounded-md cursor-pointer hover:scale-110 transition-transform max-md:w-full max-md:hover:scale-100 "
-      onClick={() => search(title)}
+      className=" mt-3 rounded-md cursor-pointer hover:opacity-70 transition-opacity max-md:w-full
+      max-md:hover:scale-100 "
+      onClick={() => setCity(title)}
     >
-      <img
-        className="w-[250px] max-md:w-full max-md:h-[150px] h-[120px] rounded-md"
-        src={img}
-        alt="img"
-      />
-      <span>{title}</span>
+      {img ? (
+        <img
+          className="w-[250px] max-md:w-full max-md:h-[150px] h-[120px] rounded-md
+          max-sm:mb-2"
+          src={img}
+          alt="img"
+        />
+      ) : (
+        <SkeletonLoader circle={false} width={187} height={120} />
+      )}
+      <span className=" ">{title}</span>
     </div>
   )
 }

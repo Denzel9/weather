@@ -1,34 +1,39 @@
 import { FunctionComponent } from 'react'
-import { FcLandscape } from 'react-icons/fc'
 import NavigationItem from './NavigationItem'
+
+import { TiWeatherPartlySunny } from 'react-icons/ti'
+import { BiSearchAlt2 } from 'react-icons/bi'
+import { LiaCitySolid } from 'react-icons/lia'
+import { AiOutlineGitlab } from 'react-icons/ai'
 
 const Navigation: FunctionComponent = () => {
   return (
-    <div className=" w-[100px] h-[450px]  bg-gray-500 bg-opacity-40 rounded-full flex flex-col items-center py-[20px] text-white justify-between ">
-      <FcLandscape className=" mx-auto w-[50px] h-[50px]" />
+    <div
+      className=" min-w-[100px] h-[450px] bg-gray-500 bg-opacity-40
+    rounded-full flex flex-col items-center text-white justify-around
+     max-sm:hidden"
+    >
+      <AiOutlineGitlab className=" mx-auto text-7xl" />
       <div className=" flex-col items-center flex gap-[30px]">
         <NavigationItem
           list={{
             link: '/',
             text: 'Погода',
-            img: './weather.png',
-            classNames: 'w-[40px] h-[40px]',
+            icon: <TiWeatherPartlySunny className=" text-4xl" />,
           }}
         />
         <NavigationItem
           list={{
             link: '/search',
             text: 'Поиск',
-            img: './explore.png',
-            classNames: 'w-[30px] h-[30px]',
+            icon: <BiSearchAlt2 className=" text-4xl" />,
           }}
         />
         <NavigationItem
           list={{
             link: '/cities',
             text: 'Города',
-            img: './city.png',
-            classNames: 'w-[25px] h-[35px]',
+            icon: <LiaCitySolid className=" text-4xl" />,
           }}
         />
       </div>

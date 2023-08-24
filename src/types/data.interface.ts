@@ -11,6 +11,7 @@ export interface IForecast {
   forecastday: IForecastDay[]
 }
 export interface IForecastDay {
+  day: any
   date: string
   hour: IHourItem[]
 }

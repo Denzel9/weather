@@ -5,8 +5,8 @@ import PopularArea from './popular-area/PopularArea'
 
 const HomePage: FunctionComponent = () => {
   return (
-    <div className=" flex gap-5 container mx-auto max-md:flex-col-reverse max-md:px-5">
-      <div>
+    <div className="flex gap-5 container mx-auto max-md:flex-col-reverse">
+      <div className=" w-[850px]">
         <PopularArea />
         <ForecastDay />
       </div>

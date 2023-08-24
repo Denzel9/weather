@@ -7,8 +7,8 @@ module.exports = {
       base: '#ACA0B7',
       white: colors.white,
       gray: colors.gray,
-      gold: '#e8aa00',
       transparent: colors.transparent,
+      purple: '#8884d8',
     },
     extend: {
       backgroundImage: {

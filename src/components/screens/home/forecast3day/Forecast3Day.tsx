@@ -1,38 +1,28 @@
 import classNames from 'classnames'
 import { FunctionComponent, useContext, useEffect, useState } from 'react'
-import { currentHour, currentTime, getApPm } from '../../../../helpers/getDate'
 import { MdOutlineWindPower, MdWaterDrop, MdWbSunny, MdDeviceThermostat } from 'react-icons/md'
-import { DataContext } from '../../../layout/Layout'
-import { IForecastDay } from '../../../../types/data.interface'
+import { DataContext } from '../../../../context/DataContextProvider'
 
 const Forecast3Day: FunctionComponent = () => {
-  const data = useContext(DataContext)
+  const { data } = useContext(DataContext)
 
-  const [date, setDate] = useState<IForecastDay>()
+  const [date, setDate] = useState<any>()
 
-  useEffect(() => setDate(data?.forecast?.forecastday[0]), [data])
-
-  const currentDayHour = () =>
-    date?.hour?.filter((item) => (item.time.slice(11, 13) === currentHour ? item : ''))
-
-  useEffect(() => {
-    currentDayHour()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data])
+  useEffect(() => setDate(data?.oneDays), [data])
 
   return (
     <div className="  w-full h-[450px] bg-gray-500 bg-opacity-40 rounded-[40px] p-[20px] text-white">
       <div className=" flex items-center justify-between">
-        {data?.forecast?.forecastday?.map((item: any) => {
+        {data?.weather?.forecast?.forecastday?.map((item: any) => {
           return (
             <div
-              className="transition-transform hover:scale-110 cursor-pointer"
               key={item.date}
-              onClick={() => setDate(item)}
+              className="transition-transform hover:scale-110 cursor-pointer"
+              onClick={() => setDate({ dayWeather: item, city: data?.oneDays?.city })}
             >
               <img
                 className={classNames(
-                  date?.date === item.date ? 'w-[50px]' : '',
+                  date?.dayWeather?.date.slice(8, 10) === item?.date.slice(8, 10) ? 'w-[50px]' : '',
                   'w-[30px] m-auto'
                 )}
                 src={item?.day?.condition?.icon}
@@ -43,27 +33,24 @@ const Forecast3Day: FunctionComponent = () => {
           )
         })}
       </div>
-      <p className=" text-center mt-2">{currentTime + getApPm(currentTime)}</p>
-      <p className=" text-2xl mt-4">Сейчас:</p>
-      {currentDayHour()?.map((item) => {
-        return (
-          <div className=" flex flex-col gap-8 mt-8" key={item.feelslike_c}>
-            <p className=" flex gap-1 items-center text-lg">
-              <MdDeviceThermostat /> Ощушается как {item.feelslike_c}°C
-            </p>
-            <p className=" flex gap-1  items-center text-lg">
-              <MdOutlineWindPower />
-              Ветер {item.wind_kph} км/ч
-            </p>
-            <p className=" flex gap-1  items-center text-lg">
-              <MdWaterDrop /> Дождь {item.chance_of_rain}%
-            </p>
-            <p className=" flex gap-1 items-center text-lg">
-              <MdWbSunny /> UV излучение {item.uv}
-            </p>
-          </div>
-        )
-      })}
+
+      <p className=" text-2xl mt-6">Сейчас:</p>
+
+      <div className=" flex flex-col gap-8 mt-8">
+        <p className=" flex gap-1 items-center text-lg">
+          <MdDeviceThermostat /> Ощушается как {date?.dayWeather?.day?.avgtemp_c}°C
+        </p>
+        <p className=" flex gap-1  items-center text-lg">
+          <MdOutlineWindPower />
+          Ветер до {date?.dayWeather?.day?.maxwind_kph} км/ч
+        </p>
+        <p className=" flex gap-1  items-center text-lg">
+          <MdWaterDrop /> Дождь {date?.dayWeather?.day?.daily_chance_of_rain}%
+        </p>
+        <p className=" flex gap-1 items-center text-lg">
+          <MdWbSunny /> UV излучение {date?.dayWeather?.day?.uv}
+        </p>
+      </div>
     </div>
   )
 }
