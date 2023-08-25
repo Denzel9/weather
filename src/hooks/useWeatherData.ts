@@ -25,7 +25,7 @@ export const useData = () => {
     select: (res) => ({
       weather: res.data,
       chart: res.data?.forecast.forecastday[0]?.hour.map((item) => ({
-        uv: '+' + Math.round(item.temp_c),
+        uv: `${Math.round(item.temp_c)}`,
         name: item.time.slice(-5),
       })),
       oneDays: { dayWeather: res?.data?.forecast?.forecastday[0], city: res?.data?.location?.name },

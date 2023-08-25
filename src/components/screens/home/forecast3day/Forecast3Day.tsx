@@ -11,8 +11,8 @@ const Forecast3Day: FunctionComponent = () => {
   useEffect(() => setDate(data?.oneDays), [data])
 
   return (
-    <div className="  w-full h-[450px] bg-gray-500 bg-opacity-40 rounded-[40px] p-[20px] text-white">
-      <div className=" flex items-center justify-between">
+    <div className="  w-full h-[450px]  bg-gray-500 bg-opacity-40 rounded-[40px] p-[20px] text-white">
+      <div className=" flex items-center justify-between h-16">
         {data?.weather?.forecast?.forecastday?.map((item: any) => {
           return (
             <div
@@ -22,7 +22,9 @@ const Forecast3Day: FunctionComponent = () => {
             >
               <img
                 className={classNames(
-                  date?.dayWeather?.date.slice(8, 10) === item?.date.slice(8, 10) ? 'w-[50px]' : '',
+                  date?.dayWeather?.date.slice(8, 10) === item?.date.slice(8, 10)
+                    ? 'w-[50px] duration-300'
+                    : 'duration-300',
                   'w-[30px] m-auto'
                 )}
                 src={item?.day?.condition?.icon}
@@ -34,9 +36,8 @@ const Forecast3Day: FunctionComponent = () => {
         })}
       </div>
 
-      <p className=" text-2xl mt-6">Сейчас:</p>
-
       <div className=" flex flex-col gap-8 mt-8">
+        <p className=" text-2xl">Сейчас:</p>
         <p className=" flex gap-1 items-center text-lg">
           <MdDeviceThermostat /> Ощушается как {date?.dayWeather?.day?.avgtemp_c}°C
         </p>

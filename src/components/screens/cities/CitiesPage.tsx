@@ -9,7 +9,7 @@ import { BsBuildings } from 'react-icons/bs'
 const CitiesPage: FunctionComponent = () => {
   return (
     <div
-      className="w-full bg-gray-500 bg-opacity-40 rounded-[40px] p-[20px] text-white overflow-hidden
+      className="w-full bg-gray-500 bg-opacity-40 rounded-[40px] p-[20px] text-white overflow-hidden animate-fade
      max-sm:mb-32"
     >
       <h1

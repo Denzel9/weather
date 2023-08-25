@@ -8,12 +8,15 @@ const SearchPage: FunctionComponent = () => {
   const { img, setDone } = useCityImage(searchText)
 
   return (
-    <div className=" h-[450px] bg-gray-500 bg-opacity-40 rounded-[40px] p-[20px] max-sm:w-full ">
+    <div
+      className=" h-[450px] bg-gray-500 bg-opacity-40 rounded-[40px] p-[20px] animate-fade
+    max-sm:w-full "
+    >
       <input
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
         className={classNames(
-          ' py-2 bg-transparent border-b outline-none text-white max-sm:w-8/12'
+          ' py-2 bg-transparent border-b outline-none  text-white max-sm:w-8/12'
         )}
         type="text"
         placeholder="Москва..."
