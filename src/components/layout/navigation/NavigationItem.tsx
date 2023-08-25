@@ -7,7 +7,7 @@ const NavigationItem: FunctionComponent<{ list: INav }> = ({ list }) => {
     <>
       <NavLink
         to={list.link}
-        onClick={() => list.fn}
+        onClick={() => list.fn!(false)}
         className={({ isActive }) =>
           isActive
             ? ' text-lg transition-transform hover:scale-110 flex flex-col items-center sm:hidden'
@@ -20,7 +20,6 @@ const NavigationItem: FunctionComponent<{ list: INav }> = ({ list }) => {
 
       <NavLink
         to={list.link}
-        onClick={() => list.fn}
         className={({ isActive }) =>
           isActive
             ? ' text-purple transition-all hover:scale-110 flex flex-col items-center max-sm:hidden'

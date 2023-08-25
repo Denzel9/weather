@@ -35,7 +35,7 @@ const MobileNav: FunctionComponent = () => {
               link: '/',
               text: 'Погода',
               icon: <TiWeatherPartlySunny className=" text-4xl " />,
-              fn: () => setShow(false),
+              fn: setShow,
             }}
           />
           <NavigationItem
@@ -43,7 +43,7 @@ const MobileNav: FunctionComponent = () => {
               link: '/search',
               text: 'Поиск',
               icon: <BiSearchAlt2 className=" text-4xl" />,
-              fn: () => setShow(false),
+              fn: setShow,
             }}
           />
           <NavigationItem
@@ -51,7 +51,7 @@ const MobileNav: FunctionComponent = () => {
               link: '/cities',
               text: 'Города',
               icon: <LiaCitySolid className=" text-4xl" />,
-              fn: () => setShow(false),
+              fn: setShow,
             }}
           />
         </div>
