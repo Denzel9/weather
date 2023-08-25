@@ -10,7 +10,7 @@ const CitiesPage: FunctionComponent = () => {
   return (
     <div
       className="w-full bg-gray-500 bg-opacity-40 rounded-[40px] p-[20px] text-white overflow-hidden animate-fade
-     max-sm:mb-32"
+     max-sm:mb-5"
     >
       <h1
         className=" text-3xl mb-3 flex items-center gap-2

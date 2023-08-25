@@ -6,9 +6,10 @@ const NavigationItem: FunctionComponent<{ list: INav }> = ({ list }) => {
   return (
     <NavLink
       to={list.link}
+      onClick={() => list.fn!(false)}
       className={({ isActive }) =>
         isActive
-          ? ' text-purple text-xs transition-transform hover:scale-110 flex flex-col items-center'
+          ? ' text-lg transition-transform hover:scale-110 flex flex-col items-center'
           : ' text-xs transition-transform hover:scale-110 flex flex-col items-center'
       }
     >

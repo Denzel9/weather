@@ -12,7 +12,7 @@ const Layout: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
   const { img } = useWeatherImg(data)
 
   return (
-    <div className={classNames(img, 'text-white h-screen bg-cover bg-center ')}>
+    <div className={classNames(img, 'text-white h-screen bg-cover bg-center  ')}>
       <CurrentInfo data={data?.weather!} isLoading={isLoading} />
       <div className=" mt-[24px] flex gap-5 container mx-auto max-sm:px-5">
         <MobileNav />
