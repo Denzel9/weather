@@ -10,7 +10,7 @@ const ForecastDay: FunctionComponent = () => {
     <div
       className={classNames(
         styles.scroll,
-        ' mt-3 w-full h-[200px] bg-gray-500 bg-opacity-40 rounded-[40px] p-[20px] text-white overflow-x-scroll overflow-y-hidden  '
+        ' mt-3 w-full h-[200px] bg-gray-500 bg-opacity-20 backdrop-blur-xl rounded-[40px] p-[20px] text-white overflow-x-scroll overflow-y-hidden  '
       )}
     >
       <p

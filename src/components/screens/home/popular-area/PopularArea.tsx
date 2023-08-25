@@ -8,7 +8,7 @@ const PopularArea: FunctionComponent = () => {
   const { data } = useContext(DataContext)
   return (
     <div
-      className="w-full bg-gray-500 bg-opacity-40 rounded-[40px] p-[20px] text-white
+      className="w-full bg-gray-500 bg-opacity-20 backdrop-blur-xl rounded-[40px] p-[20px] text-white
      max-sm:hidden"
     >
       <h2 className=" flex items-center gap-2 text-2xl ">

@@ -9,7 +9,7 @@ const SearchPage: FunctionComponent = () => {
 
   return (
     <div
-      className=" h-[450px] bg-gray-500 bg-opacity-40 rounded-[40px] p-[20px] animate-fade
+      className=" h-[450px] bg-gray-500 bg-opacity-20 backdrop-blur-xl rounded-[40px] p-[20px] animate-fade
     max-sm:w-full max-sm:h-[550px]"
     >
       <input

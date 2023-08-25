@@ -35,3 +35,23 @@ export interface ICondition {
 export interface IHour {
   [key: string]: string | number
 }
+
+export interface IDataContext {
+  setCity(string: string): void
+  data: any
+  isLoading: boolean
+}
+
+export interface IDataInfo {
+  weather: IData
+  chart: IChart
+  oneDays: IOneDay
+}
+export interface IChart {
+  uv: string
+  name: string
+}
+export interface IOneDay {
+  city: string
+  dayWeather: IForecastDay
+}

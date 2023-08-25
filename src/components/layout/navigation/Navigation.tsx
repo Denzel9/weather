@@ -9,7 +9,7 @@ import { AiOutlineGitlab } from 'react-icons/ai'
 const Navigation: FunctionComponent = () => {
   return (
     <div
-      className=" min-w-[100px] h-[450px] bg-gray-500 bg-opacity-40
+      className=" min-w-[100px] h-[450px] bg-gray-500 bg-opacity-20 backdrop-blur-xl
     rounded-full flex flex-col items-center text-white justify-around
      max-sm:hidden"
     >
@@ -20,6 +20,7 @@ const Navigation: FunctionComponent = () => {
             link: '/',
             text: 'Погода',
             icon: <TiWeatherPartlySunny className=" text-4xl" />,
+            fn: () => {},
           }}
         />
         <NavigationItem
@@ -27,6 +28,7 @@ const Navigation: FunctionComponent = () => {
             link: '/search',
             text: 'Поиск',
             icon: <BiSearchAlt2 className=" text-4xl" />,
+            fn: () => {},
           }}
         />
         <NavigationItem
@@ -34,6 +36,7 @@ const Navigation: FunctionComponent = () => {
             link: '/cities',
             text: 'Города',
             icon: <LiaCitySolid className=" text-4xl" />,
+            fn: () => {},
           }}
         />
       </div>

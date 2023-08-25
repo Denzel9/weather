@@ -9,7 +9,7 @@ import { BsBuildings } from 'react-icons/bs'
 const CitiesPage: FunctionComponent = () => {
   return (
     <div
-      className="w-full bg-gray-500 bg-opacity-40 rounded-[40px] p-[20px] text-white overflow-hidden animate-fade
+      className="w-full bg-gray-500 bg-opacity-20 backdrop-blur-xl rounded-[40px] p-[20px] text-white overflow-hidden animate-fade
      max-sm:mb-5"
     >
       <h1
@@ -19,7 +19,7 @@ const CitiesPage: FunctionComponent = () => {
         <BsBuildings />
         Популярные города
       </h1>
-      <ul className=" grid grid-cols-4 gap-3 overflow-scroll max-sm:grid-cols-1">
+      <ul className=" grid grid-cols-4 gap-3 overflow-scroll max-sm:grid-cols-1 ">
         {popularData.map((item) => {
           return <PopularItem key={item.title} {...item} />
         })}
