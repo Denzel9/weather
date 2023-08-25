@@ -7,7 +7,7 @@ const HomePage: FunctionComponent = () => {
   return (
     <div
       className="flex gap-5 container mx-auto animate-fade
-    max-sm:flex-col max-sm:pb-10"
+    max-sm:flex-col "
     >
       <div
         className=" w-[850px]
