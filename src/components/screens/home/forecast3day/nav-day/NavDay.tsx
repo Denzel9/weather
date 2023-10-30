@@ -12,11 +12,13 @@ const NavDay: FunctionComponent<{
       {data?.weather?.forecast?.forecastday?.map((item) => {
         return (
           <div
+            data-testid="divClick"
             key={item.date}
             className="transition-transform hover:scale-110 cursor-pointer"
             onClick={() => setDate({ dayWeather: item, city: data?.oneDays?.city })}
           >
             <img
+              data-testid="icon"
               className={classNames(
                 date?.dayWeather?.date.slice(8, 10) === item?.date.slice(8, 10)
                   ? 'w-[50px] duration-300'
@@ -26,7 +28,7 @@ const NavDay: FunctionComponent<{
               src={item?.day?.condition?.icon}
               alt={item.date}
             />
-            <span className=" text-xs">{item.date}</span>
+            <span className="text-xs">{item.date}</span>
           </div>
         )
       })}

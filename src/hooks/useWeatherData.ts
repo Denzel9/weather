@@ -24,7 +24,7 @@ export const useData = () => {
   const { data, isLoading } = useQuery([city], () => getSearch(city), {
     select: (res) => ({
       weather: res.data,
-      chart: res.data?.forecast.forecastday[0]?.hour.map((item) => ({
+      chart: res.data?.forecast?.forecastday[0]?.hour.map((item) => ({
         uv: `${Math.round(item.temp_c)}`,
         name: item.time.slice(-5),
       })),
