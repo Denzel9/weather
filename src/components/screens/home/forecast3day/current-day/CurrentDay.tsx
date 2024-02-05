@@ -4,6 +4,7 @@ import Title3Day from '../title/Title3Day'
 import { IOneDay } from '../../../../../types/data.interface'
 
 const CurrentDay: FunctionComponent<{ date: IOneDay }> = ({ date }) => {
+  const test12 = 0
   return (
     <div
       className=" flex flex-col gap-8 mt-8
