@@ -8,7 +8,6 @@ const Forecast3Day: FunctionComponent = () => {
   const { data } = useContext(DataContext)
 
   const [date, setDate] = useState<IOneDay>()
-
   useEffect(() => setDate(data?.oneDays), [data])
   return (
     <div

@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`navigation day snapshot 1`] = `
+<div
+  className=" flex items-center justify-between h-16"
+>
+  <div
+    className="transition-transform hover:scale-110 cursor-pointer"
+    data-testid="divClick"
+    onClick={[Function]}
+  >
+    <img
+      alt="2023-10-25"
+      className="duration-300 w-[30px] m-auto"
+      data-testid="icon"
+    />
+    <span
+      className="text-xs"
+    >
+      2023-10-25
+    </span>
+  </div>
+  <div
+    className="transition-transform hover:scale-110 cursor-pointer"
+    data-testid="divClick"
+    onClick={[Function]}
+  >
+    <img
+      alt="2023-10-26"
+      className="duration-300 w-[30px] m-auto"
+      data-testid="icon"
+    />
+    <span
+      className="text-xs"
+    >
+      2023-10-26
+    </span>
+  </div>
+  <div
+    className="transition-transform hover:scale-110 cursor-pointer"
+    data-testid="divClick"
+    onClick={[Function]}
+  >
+    <img
+      alt="2023-10-27"
+      className="w-[50px] duration-300 w-[30px] m-auto"
+      data-testid="icon"
+    />
+    <span
+      className="text-xs"
+    >
+      2023-10-27
+    </span>
+  </div>
+</div>
+`;
