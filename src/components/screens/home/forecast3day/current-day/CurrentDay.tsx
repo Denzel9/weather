@@ -9,37 +9,47 @@ const CurrentDay: FunctionComponent<{ date: IOneDay }> = ({ date }) => {
       className=" flex flex-col gap-8 mt-8
    max-sm:gap-7"
     >
-      <Title3Day date={date?.dayWeather?.date.slice(8, 10)} />
+      <Title3Day date={date?.dayWeather?.date?.slice(8, 10)} />
 
-      <p
+      <div
         className=" flex gap-1 items-center text-lg
        sm:hidden"
       >
-        <MdDeviceThermostat className="text-purple" /> Температура от
-        <span className=" text-purple">{Math.round(date?.dayWeather?.day?.mintemp_c)}</span>°C до
-        <span className=" text-purple">{Math.round(date?.dayWeather?.day?.maxtemp_c)}</span>°C
-      </p>
+        <MdDeviceThermostat className="text-purple" />
+        Температура от
+        <span className=" text-purple">{date && Math.round(date?.dayWeather?.day?.mintemp_c)}</span>
+        °C до
+        <span className=" text-purple">{date && Math.round(date?.dayWeather?.day?.maxtemp_c)}</span>
+        °C
+      </div>
 
-      <p
+      <div
         className=" flex gap-1 items-center text-lg
        max-sm:hidden"
+        data-testid="temp"
       >
-        <MdDeviceThermostat className="text-purple" /> Температура
-        <span className=" text-purple">{Math.round(date?.dayWeather?.day?.mintemp_c)}</span>-
-        <span className=" text-purple">{Math.round(date?.dayWeather?.day?.maxtemp_c)}</span>°C
-      </p>
-      <p className=" flex gap-1  items-center text-lg">
+        <MdDeviceThermostat className="text-purple" />
+        Температура
+        <span className=" text-purple">{date && Math.round(date?.dayWeather?.day?.mintemp_c)}</span>
+        -
+        <span className=" text-purple">{date && Math.round(date?.dayWeather?.day?.maxtemp_c)}</span>
+        °C
+      </div>
+      <div className=" flex gap-1  items-center text-lg" data-testid="wind">
         <MdOutlineWindPower className="text-purple" />
-        Ветер до <span className=" text-purple">{date?.dayWeather?.day?.maxwind_kph}</span> км/ч
-      </p>
-      <p className=" flex gap-1  items-center text-lg">
+        Ветер до <span className=" text-purple">
+          {date && date?.dayWeather?.day?.maxwind_kph}
+        </span>{' '}
+        км/ч
+      </div>
+      <div className=" flex gap-1  items-center text-lg" data-testid="rain">
         <MdWaterDrop className="text-purple" /> Дождь{' '}
-        <span className=" text-purple">{date?.dayWeather?.day?.daily_chance_of_rain}</span>%
-      </p>
-      <p className=" flex gap-1 items-center text-lg">
+        <span className=" text-purple">{date && date?.dayWeather?.day?.daily_chance_of_rain}</span>%
+      </div>
+      <div className=" flex gap-1 items-center text-lg" data-testid="uv">
         <MdWbSunny className="text-purple" /> UV излучение{' '}
-        <span className=" text-purple">{date?.dayWeather?.day?.uv}</span>
-      </p>
+        <span className=" text-purple">{date && date?.dayWeather?.day?.uv}</span>
+      </div>
     </div>
   )
 }
